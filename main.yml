@@ -1,0 +1,13 @@
+---
+- hosts: home
+roles:
+- security
+# Copied from https://spinupwp.com/automating-server-setup-ansible/ - Will tidy up later
+# - common
+# - ufw
+# - user
+# - nginx
+# - php
+# - mariadb
+# - wp-cli
+# - ssh
