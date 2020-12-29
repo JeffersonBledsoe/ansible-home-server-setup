@@ -1,0 +1,7 @@
+---
+# Ensure packages are all set to the latest versions
+- name: Perform full patching
+  package:
+    name: "*"
+    state: latest
+
