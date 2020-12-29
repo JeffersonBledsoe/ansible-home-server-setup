@@ -1,0 +1,4 @@
+allowed_ips:
+  - "192.168.0.15"
+  - "192.168.0.13"
+destemail: "me@jeffersonbledsoe.com"
