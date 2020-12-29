@@ -2,10 +2,10 @@
 - hosts: home
   become: yes
   roles:
-    - packages
     - ssh
     - ufw
     - fail2ban
+    - common
 # Copied from https://spinupwp.com/automating-server-setup-ansible/ - Will tidy up later
 # - common
 # - ufw
