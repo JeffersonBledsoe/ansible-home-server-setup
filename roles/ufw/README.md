@@ -1,4 +1,13 @@
-# Security
+# UFW
+
+## Overview
+
+Disables all incoming and outgoing connections, with the following exceptions:
+
+- Allows all incoming SSH connections from the list of IPs in the `allowed_ips` variable. This connection is rate limited.
+- Allows all incoming and outgoing NTP connections.
+
+Logging is enabled at the default level.
 
 ## Variables
 
