@@ -1,0 +1,36 @@
+---
+- name: Disable incoming traffic
+  community.general.ufw:
+    direction: incoming
+    policy: reject
+
+- name: Disable outgoing traffic
+  community.general.ufw:
+    direction: outgoing
+    policy: reject
+
+- name: Allow SSH in (limited)
+  community.general.ufw:
+    rule: limit
+    port: ssh
+    proto: tcp
+    direction: in
+    from_ip: "{{ item }}"
+  loop: "{{ allowed_ips }}"
+
+- name: Allow NTP in (limited)
+  community.general.ufw:
+    rule: allow
+    port: ntp
+    direction: in
+
+- name: Allow NTP out (limited)
+  community.general.ufw:
+    rule: allow
+    port: ntp
+    direction: out
+
+- name: Enable firewall and logging
+  community.general.ufw:
+    state: enabled
+    logging: "on"

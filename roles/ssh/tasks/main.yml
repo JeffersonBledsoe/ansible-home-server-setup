@@ -1,0 +1,15 @@
+---
+- name: Add SSH public key for user
+  authorized_key:
+    user: ubuntu
+    key: "{{ lookup('file', public_key) }}"
+    state: present
+
+- name: Add hardened SSH config
+  copy:
+    dest: /etc/ssh/sshd_config
+    src: sshd-config
+    owner: root
+    group: root
+    mode: 0600
+  notify: Reload SSH

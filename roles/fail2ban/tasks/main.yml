@@ -1,0 +1,12 @@
+---
+- name: Install Fail2ban
+  package:
+    name: "fail2ban"
+    state: latest
+
+- name: Add Fail2ban config
+  template:
+    dest: /etc/fail2ban/jail.local
+    src: fail2ban.j2
+    mode: 0777
+  notify: Reload Fail2ban
