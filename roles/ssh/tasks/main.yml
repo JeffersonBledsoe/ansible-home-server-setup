@@ -4,7 +4,6 @@
     user: ubuntu
     key: "{{ lookup('file', public_key) }}"
     state: present
-  become: yes
 
 - name: Add hardened SSH config
   copy:
@@ -14,4 +13,3 @@
     group: root
     mode: 0600
   notify: Reload SSH
-  become: yes

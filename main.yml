@@ -1,5 +1,6 @@
 ---
 - hosts: home
+  become: yes
   roles:
     - packages
     - ssh
