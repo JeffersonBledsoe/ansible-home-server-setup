@@ -10,3 +10,4 @@
     user: ubuntu
     key: "{{ lookup('file', public_key) }}"
     state: present
+  become: yes
