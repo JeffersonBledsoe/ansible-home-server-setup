@@ -6,6 +6,7 @@
     - ufw
     - fail2ban
     - common
+    - mdns
 # Copied from https://spinupwp.com/automating-server-setup-ansible/ - Will tidy up later
 # - common
 # - ufw
