@@ -5,3 +5,11 @@
     state: latest
   become: yes
 
+- name: Add SSH public key for user
+  authorized_key:
+    user: ubuntu
+    # Should set ssh key file as a variable
+    key: "{{ lookup('file', '~/.ssh/home_server_ssh_key.pub') }}"
+    state: present
+  tags:
+    - ssh
