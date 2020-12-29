@@ -1,0 +1,6 @@
+---
+- name: Upgrade packages to latest versions
+  package:
+    name: "*"
+    state: latest
+  become: yes
